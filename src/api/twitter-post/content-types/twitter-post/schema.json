@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "twitter_posts",
+  "info": {
+    "singularName": "twitter-post",
+    "pluralName": "twitter-posts",
+    "displayName": "twitter_post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "string"
+    },
+    "content_media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "content_text": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "published_date": {
+      "type": "datetime"
+    }
+  }
+}
