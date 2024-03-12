@@ -15,20 +15,6 @@
     "user": {
       "type": "string"
     },
-    "content_media": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "title": {
-      "type": "string"
-    },
     "content_text": {
       "type": "string"
     },
@@ -40,6 +26,9 @@
     },
     "published_date": {
       "type": "datetime"
+    },
+    "content_media_url": {
+      "type": "string"
     }
   }
 }
