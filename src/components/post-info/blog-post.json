@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_post_info_blog_posts",
+  "info": {
+    "displayName": "Blog post"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

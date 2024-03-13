@@ -362,62 +362,33 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiPostPost extends Schema.CollectionType {
-  collectionName: 'posts';
+export interface ApiContentContent extends Schema.CollectionType {
+  collectionName: 'contents';
   info: {
-    singularName: 'post';
-    pluralName: 'posts';
-    displayName: 'blog_post';
+    singularName: 'content';
+    pluralName: 'contents';
+    displayName: 'Content';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
-    content_text: Attribute.String;
-    slug: Attribute.UID;
     published_date: Attribute.DateTime;
-    content_media: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiTwitterPostTwitterPost extends Schema.CollectionType {
-  collectionName: 'twitter_posts';
-  info: {
-    singularName: 'twitter-post';
-    pluralName: 'twitter-posts';
-    displayName: 'twitter_post';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    user: Attribute.String;
-    content_text: Attribute.String;
-    url: Attribute.String;
-    slug: Attribute.UID;
-    published_date: Attribute.DateTime;
-    content_media_url: Attribute.String;
+    post: Attribute.DynamicZone<
+      ['post-info.blog-post', 'post-info.twitter-post']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::twitter-post.twitter-post',
+      'api::content.content',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::twitter-post.twitter-post',
+      'api::content.content',
       'oneToOne',
       'admin::user'
     > &
@@ -856,8 +827,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::post.post': ApiPostPost;
-      'api::twitter-post.twitter-post': ApiTwitterPostTwitterPost;
+      'api::content.content': ApiContentContent;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

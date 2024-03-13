@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_post_info_twitter_posts",
+  "info": {
+    "displayName": "Twitter post"
+  },
+  "options": {},
+  "attributes": {
+    "user": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "media": {
+      "type": "string"
+    }
+  }
+}
