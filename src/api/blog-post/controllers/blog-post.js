@@ -3,23 +3,23 @@
 module.exports = {
   async find(ctx) {
     const { query } = ctx.request;
-    const { 'api::content.content': contentService } = strapi.services;
+    const { "api::blog-post.blog-post": blogPostSerive } = strapi.services;
 
     try {
-      const content = await contentService.find(query);
-      return content;
+      const blogPost = await blogPostSerive.find(query);
+      return blogPost;
     } catch (err) {
       ctx.response.status = 400;
       return { error: err.message };
     }
   },
 
-  async twitterPostHandler(ctx) {
+  async blogPostHandler(ctx) {
     const { data } = ctx.request.body;
-    const { 'api::content.content': contentService } = strapi.services;
+    const { "api::blog-post.blog-post": blogPostSerive } = strapi.services;
 
     try {
-      const processedPost = await contentService.processAndSave(data);
+      const processedPost = await blogPostSerive.save(data);
       return processedPost;
     } catch (err) {
       ctx.response.status = 400;

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "twitter_posts",
+  "info": {
+    "singularName": "twitter-post",
+    "pluralName": "twitter-posts",
+    "displayName": "Twitter post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "external_url": {
+      "type": "string"
+    },
+    "media": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "customField",
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    }
+  }
+}

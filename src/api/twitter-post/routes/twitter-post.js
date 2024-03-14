@@ -4,16 +4,16 @@ module.exports = {
   routes: [
     {
       method: "GET",
-      path: "/contents",
-      handler: "content.find",
+      path: "/twitter-post",
+      handler: "twitter-post.find",
       config: {
         policies: [],
       },
     },
     {
       method: "POST",
-      path: "/contents",
-      handler: "content.twitterPostHandler",
+      path: "/twitter-post",
+      handler: "twitter-post.twitterPostHandler",
       config: {
         policies: [],
       },

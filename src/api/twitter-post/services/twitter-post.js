@@ -4,17 +4,14 @@ const { TwitterDL } = require("twitter-downloader");
 
 module.exports = ({ strapi }) => ({
   async find(query) {
-    return strapi.query("content").find(query);
+    return strapi.query("twitter-post").find(query);
   },
 
   async processAndSave(data) {
     let newData = data;
 
     // Media Handling Logic
-    if (
-      newData.content.includes &&
-      newData.content.includes("https://t.co")
-    ) {
+    if (newData.content.includes && newData.content.includes("https://t.co")) {
       const splitText = data.content.split(" ");
       const filteredText = splitText.filter(
         (word) => !word.includes("https://t.co")
@@ -40,17 +37,11 @@ module.exports = ({ strapi }) => ({
     // Saving to Strapi
     try {
       const newTwitterPost = await strapi.entityService.create(
-        "api::content.content",
+        "api::twitter-post.twitter-post",
         {
           data: {
-            published_date: new Date(),
             publishedAt: new Date().getTime(),
-            post: [
-              {
-                __component: "post-info.twitter-post",
-                ...newData,
-              },
-            ],
+            ...newData,
           },
         }
       );
