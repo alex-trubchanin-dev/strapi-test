@@ -21,12 +21,19 @@
     "external_url": {
       "type": "string"
     },
-    "media": {
-      "type": "string"
-    },
     "uuid": {
       "type": "customField",
       "customField": "plugin::strapi-advanced-uuid.uuid"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

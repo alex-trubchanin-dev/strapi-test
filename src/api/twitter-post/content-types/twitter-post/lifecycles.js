@@ -11,8 +11,7 @@ module.exports = {
         content: result.content,
         external_url: result.external_url,
         user: result.user,
-        media: null,
-        media_url: result.media,
+        media: params.data.media,
       },
       publishedAt: result.publishedAt,
     });
@@ -37,8 +36,7 @@ module.exports = {
           content: result.content,
           external_url: result.external_url,
           user: result.user,
-          media: null,
-          media_url: result.media,
+          media: params.data.media,
         },
         publishedAt: result.publishedAt,
       });

@@ -801,7 +801,6 @@ export interface ApiAllAll extends Schema.CollectionType {
     external_url: Attribute.String;
     user: Attribute.String;
     media: Attribute.Media;
-    media_url: Attribute.String;
     uuid: Attribute.UID &
       Attribute.CustomField<'plugin::strapi-advanced-uuid.uuid'>;
     createdAt: Attribute.DateTime;
@@ -865,9 +864,9 @@ export interface ApiTwitterPostTwitterPost extends Schema.CollectionType {
     user: Attribute.String;
     content: Attribute.Text;
     external_url: Attribute.String;
-    media: Attribute.String;
     uuid: Attribute.UID &
       Attribute.CustomField<'plugin::strapi-advanced-uuid.uuid'>;
+    media: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -38,9 +38,6 @@
         "audios"
       ]
     },
-    "media_url": {
-      "type": "string"
-    },
     "uuid": {
       "type": "customField",
       "customField": "plugin::strapi-advanced-uuid.uuid"

@@ -8,6 +8,16 @@ module.exports = () => ({
       amountLimit: 100,
       apolloServer: {
         tracing: false,
+        introspection: true,
+      },
+    },
+  },
+  upload: {
+    config: {
+      providerOptions: {
+        localServer: {
+          maxage: 300000,
+        },
       },
     },
   },
