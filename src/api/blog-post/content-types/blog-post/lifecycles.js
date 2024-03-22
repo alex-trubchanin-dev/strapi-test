@@ -10,7 +10,7 @@ module.exports = {
         title: result.title,
         content: result.content,
         external_url: result.external_url,
-        user: null,
+        user: "admin",
         media: params.data.media,
       },
     });
@@ -34,7 +34,7 @@ module.exports = {
           title: result.title,
           content: result.content,
           external_url: result.external_url,
-          user: null,
+          user: "admin",
           media: params.data.media,
         },
       });
