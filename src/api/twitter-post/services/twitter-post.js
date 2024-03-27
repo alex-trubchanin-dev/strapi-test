@@ -72,7 +72,7 @@ module.exports = ({ strapi }) => ({
               const buffer = await image.arrayBuffer();
 
               newData.media = await uploadAndLinkDocument(buffer, {
-                filename: `twitter_photo_${i}_${Date.now()}.jpg`,
+                filename: `twitter_photo_${i}_${Date.now()}`,
                 extension: "jpg",
                 mimeType: "image/jpeg",
                 refId: null,
@@ -82,7 +82,9 @@ module.exports = ({ strapi }) => ({
               });
             } else {
               const videoBuffer = await fetch(
-                res.result.media[i].videos[0].url
+                res.result.media[i].videos[
+                  res.result.media[i].videos.length - 1
+                ].url
               ).then((response) => response.arrayBuffer());
 
               newData.media = await uploadAndLinkDocument(videoBuffer, {

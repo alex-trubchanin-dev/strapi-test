@@ -797,12 +797,12 @@ export interface ApiAllAll extends Schema.CollectionType {
   attributes: {
     type: Attribute.String;
     title: Attribute.String;
-    content: Attribute.Text;
     external_url: Attribute.String;
     user: Attribute.String;
     media: Attribute.Media;
     uuid: Attribute.UID &
       Attribute.CustomField<'plugin::strapi-advanced-uuid.uuid'>;
+    content: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -826,11 +826,11 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String;
-    content: Attribute.Text;
     external_url: Attribute.String;
     media: Attribute.Media;
     uuid: Attribute.UID &
       Attribute.CustomField<'plugin::strapi-advanced-uuid.uuid'>;
+    content: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -862,11 +862,11 @@ export interface ApiTwitterPostTwitterPost extends Schema.CollectionType {
   };
   attributes: {
     user: Attribute.String;
-    content: Attribute.Text;
     external_url: Attribute.String;
     uuid: Attribute.UID &
       Attribute.CustomField<'plugin::strapi-advanced-uuid.uuid'>;
     media: Attribute.Media;
+    content: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
