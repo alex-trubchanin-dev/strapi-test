@@ -78,7 +78,7 @@ module.exports = ({ strapi }) => ({
                 refId: null,
                 ref: "api::twitter-post:twitter-post",
                 field: "media",
-                user: null,
+                user: "admin",
               });
             } else {
               const videoBuffer = await fetch(
@@ -94,7 +94,7 @@ module.exports = ({ strapi }) => ({
                 refId: null,
                 ref: "api::twitter-post:twitter-post",
                 field: "media",
-                user: null,
+                user: "admin",
               });
             }
           }
